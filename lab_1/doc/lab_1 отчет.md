@@ -213,6 +213,44 @@
     khrstln@LinuxUbuntu:/usr/local/Cpp_and_unix/lab_1$ mkdir doc
     khrstln@LinuxUbuntu:/usr/local/Cpp_and_unix/lab_1$ mkdir src
     ```
+    Далее скопируем директории folder_max и folder_min в lab_1
+    
+    3. Создать ветки dev / stg / prd, удалить ранее существующие ветки удаленно и локально
+    Создадим фиктивную ветку fake
+    ```
+    khrstln@LinuxUbuntu:/usr/local/Cpp_and_unix$ git branch fake
+    khrstln@LinuxUbuntu:/usr/local/Cpp_and_unix$ git branch
+      fake
+    * main
+    khrstln@LinuxUbuntu:/usr/local/Cpp_and_unix$ git push origin fake
+    ```
+    Создадим ветки dev, stg, prd
+    ```
+    khrstln@LinuxUbuntu:/usr/local/Cpp_and_unix$ git branch dev
+    khrstln@LinuxUbuntu:/usr/local/Cpp_and_unix$ git branch stg
+    khrstln@LinuxUbuntu:/usr/local/Cpp_and_unix$ git branch prd
+    khrstln@LinuxUbuntu:/usr/local/Cpp_and_unix$ git branch
+      dev
+      stg
+      prd
+      fake
+    * main
+    khrstln@LinuxUbuntu:/usr/local/Cpp_and_unix$ git push origin dev
+    khrstln@LinuxUbuntu:/usr/local/Cpp_and_unix$ git push origin stg
+    khrstln@LinuxUbuntu:/usr/local/Cpp_and_unix$ git push origin prd
+    ```
+    Удалим ветку fake локально и удаленно
+    ```
+    khrstln@LinuxUbuntu:/usr/local/Cpp_and_unix$ git branch -d fake
+    khrstln@LinuxUbuntu:/usr/local/Cpp_and_unix$ git branch
+      dev
+      stg
+      prd
+    * main
+    khrstln@LinuxUbuntu:/usr/local/Cpp_and_unix$ git push origin :fake
+    To github.com:khrstln/Cpp_and_unix.git
+    - [deleted]         fake
+    ```
 
 
 
