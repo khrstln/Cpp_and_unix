@@ -1,7 +1,7 @@
 #!/bin/bash
 git checkout stg
-git merge --commit dev  -m "Merge dev branch to stg branch"
-time_tag=$(date '+%dd-%mm-%YYYY_%H-%M')
-git tag
+git merge --commit dev
+time_tag=$(date '+%d.%m.%Y.%H.%M.%S')
+git tag "$time_tag"
 git push origin stg
 git push origin "$time_tag"
