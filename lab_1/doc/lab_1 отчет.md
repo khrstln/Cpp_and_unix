@@ -252,7 +252,30 @@
     - [deleted]         fake
     ```
 
-
+    4. Создать скрипт автоматического переноса ревизий из ветки dev в ветку stg с установкой метки времени (tag). Скрипт в корень репозитория
+    
+    Создадим в директории lab_1 файл from_dev_to_stg.sh и запишем в него следующий скрипт
+    ```
+    #!/bin/bash
+    git checkout stg
+    git merge --commit dev  -m "Merge dev branch to stg branch"
+    time_tag=$(date '+%dd-%mm-%YYYY_%H-%M')
+    git tag
+    git push origin stg
+    git push origin "$time_tag"
+    ```
+    5. Создать скрипт автоматического переноса ревизий из ветки stg в ветку prd с установкой метки времени (tag). Скрипт в корень репозитория
+    
+    Создадим в директории lab_1 файл from_stg_to_prd.sh и запишем в него следующий скрипт
+    ```
+    ##!/bin/bash
+    git checkout prd
+    git merge --commit dev  -m "Merge stg branch to prd branch"
+    time_tag=$(date '+%dd-%mm-%YYYY_%H-%M')
+    git tag
+    git push origin prd
+    git push origin "$time_tag"
+    ```
 
 
 
