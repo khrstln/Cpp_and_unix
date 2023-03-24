@@ -155,8 +155,40 @@
 2. [КОНТЕЙНЕР] docker build / run / ps / images
     1. Создать скрипт, который пишет текущую дату/время в файл output.log в текущей директории
     
-    Будем работать в директории /usr/local
+    Будем работать в директории /usr/local. Создадим файл date.sh со следующим содержанием
+    
     ```
-    touch
-    ````
+    #!/bin/bash
+    date >> output.log
+    ```
+    
+    2. Собрать образ со скриптами выше и с пакетом nano (docker build)
+    ```
+    khrstln@LinuxUbuntu:/usr/local$ sudo docker image build -t myimage .
+    
+    khrstln@LinuxUbuntu:/usr/local$ sudo docker image ls
+    myimage       latest    a54a4e4feccf   45 minutes ago   121MB
+    ```
+    3. Запустить образ (docker run)
+    ```
+    khrstln@LinuxUbuntu:/usr/local$ sudo docker run -it myimage
+    root@4829ba9bd0e0:/#
+    ```
+    
+    4. Выполнить скрипт, который подложили при сборке образа
+    ```
+    root@4829ba9bd0e0:/# ls
+    bin      dev   lib    libx32  opt   run   sys  var
+    boot     etc   lib32  media   proc  sbin  tmp
+    date.sh  home  lib64  mnt     root  srv   usr
+    root@4829ba9bd0e0:/# ./date.sh
+    Fri Mar 24 12:40:26 UTC 2023
+    ```
+    
+    5.	Вывести список пользователей в собранном образе
+    ```
+    khrstln@LinuxUbuntu:/usr/local$ sudo docker run myimage id
+    uid=0(root) gid=0(root) groups=0(root) 
+    ```
+    
     
