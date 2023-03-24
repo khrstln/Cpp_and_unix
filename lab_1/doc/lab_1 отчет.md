@@ -190,5 +190,40 @@
     khrstln@LinuxUbuntu:/usr/local$ sudo docker run myimage id
     uid=0(root) gid=0(root) groups=0(root) 
     ```
+
+3. [GIT] GitHub / GitLab, в котором будут содержаться все выполненные ЛР
+    1. Создать репозиторий в GitHub или GitLab
+    ```
+    khrstln@LinuxUbuntu:/usr/local$ apt install git
+    khrstln@LinuxUbuntu:/usr/local$ git config --global user.name khrstln
+    khrstln@LinuxUbuntu:/usr/local$ git config --global user.email iliss002@mail.ru
+    ```
+    Дальнейшие команды выполняются после добавления в Cpp_and_unix всех необходимых папок и файлов
+    ```
+    khrstln@LinuxUbuntu:/usr/local/Cpp_and_unix$ git init
+    khrstln@LinuxUbuntu:/usr/local/Cpp_and_unix$ git add .
+    khrstln@LinuxUbuntu:/usr/local/Cpp_and_unix$ git commit -m 'Final version'
+    ```
     
+    2. Создать структуру репозитория
+    ```
+    khrstln@LinuxUbuntu:/usr/local/Cpp_and_unix$ mkdir lab_1
+    khrstln@LinuxUbuntu:/usr/local/Cpp_and_unix$ cd lab_1
+    khrstln@LinuxUbuntu:/usr/local/Cpp_and_unix/lab_1$ mkdir build
+    khrstln@LinuxUbuntu:/usr/local/Cpp_and_unix/lab_1$ mkdir doc
+    khrstln@LinuxUbuntu:/usr/local/Cpp_and_unix/lab_1$ mkdir src
+    ```
+
+
+
+
+
+
+
+
+
+
+
+
+
     
