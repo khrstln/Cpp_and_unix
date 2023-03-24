@@ -258,9 +258,9 @@
     ```
     #!/bin/bash
     git checkout stg
-    git merge --commit dev  -m "Merge dev branch to stg branch"
-    time_tag=$(date '+%dd-%mm-%YYYY_%H-%M')
-    git tag
+    git merge --commit dev
+    time_tag=$(date '+%d.%m.%Y.%H.%M.%S')
+    git tag "$time_tag"
     git push origin stg
     git push origin "$time_tag"
     ```
@@ -268,11 +268,11 @@
     
     Создадим в директории lab_1 файл from_stg_to_prd.sh и запишем в него следующий скрипт
     ```
-    ##!/bin/bash
+    #!/bin/bash
     git checkout prd
-    git merge --commit dev  -m "Merge stg branch to prd branch"
-    time_tag=$(date '+%dd-%mm-%YYYY_%H-%M')
-    git tag
+    git merge --commit dev
+    time_tag=$(date '+%d.%m.%Y.%H.%M.%S')
+    git tag "$time_tag"
     git push origin prd
     git push origin "$time_tag"
     ```
