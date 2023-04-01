@@ -258,7 +258,7 @@
     ```
     #!/bin/bash
     git checkout stg
-    git merge --commit dev
+    git merge dev
     time_tag=$(date '+%d.%m.%Y.%H.%M.%S')
     git tag "$time_tag"
     git push origin stg
@@ -270,7 +270,7 @@
     ```
     #!/bin/bash
     git checkout prd
-    git merge --commit dev
+    git merge stg
     time_tag=$(date '+%d.%m.%Y.%H.%M.%S')
     git tag "$time_tag"
     git push origin prd
