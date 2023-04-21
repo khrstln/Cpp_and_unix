@@ -5,9 +5,6 @@
 
 using namespace std;
 
-// int [−2 147 483 648:2 147 483 647] 4 bytes
-// long 8 bytes
-
 double func(const int &x, const int &n)
 {
     clock_t start = clock(); // time of start in flops
