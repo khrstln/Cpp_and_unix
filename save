@@ -1,0 +1,8 @@
+#!/bin/bash
+git switch stg
+git merge --commit dev
+git push
+git switch prd
+git merge --commit dev
+git push
+git switch dev
