@@ -21,32 +21,36 @@ plus / minus / power; Ханойская башня, результат корр
 #include <cmath>
 #include <string>
 
-int main() {
-    std::cout << "Enter an expression: " << "\n";
-    std::string expr;
-    std::cin >> expr;
+int main(int argc, char* argv[]) {
+    double x, y;
+    x = std::stod(argv[1]);
+    y = std::stod(argv[3]);
 
-    if (expr.find("plus") != expr.npos) {
-        size_t pos = expr.find("plus");
-        double x = std::stod(expr.substr(0, pos));
-        double y = std::stod(expr.substr(pos + 4));
-        std::cout  << expr.substr(0, pos) << " + " << expr.substr(pos + 4) << " = " << x + y;
+    std::string oper;
+    oper = argv[2];
+    std::cout << oper << "\n";
+
+    if (oper == "plus") {
+        std::cout << x << '+' << y << '=' << x + y << "\n";
         return 0;
     }
 
-    if (expr.find("minus") != expr.npos) {
-        size_t pos = expr.find("minus");
-        double x = std::stod(expr.substr(0, pos));
-        double y = std::stod(expr.substr(pos + 5));
-        std::cout  << expr.substr(0, pos) << " - " << expr.substr(pos + 5) << " = " << x - y;
+    else if (oper == "minus") {
+        std::cout << x << '-' << y << '=' << x - y << "\n";
         return 0;
     }
 
-    if (expr.find("power") != expr.npos) {
-        size_t pos = expr.find("power");
-        double x = std::stod(expr.substr(0, pos));
-        double y = std::stod(expr.substr(pos + 5));
-        std::cout  << expr.substr(0, pos) << "^" << expr.substr(pos + 5) << " = " << pow(x, y);
+    else if (oper == "power") {
+        double result = 1;
+        for (int i = 0; i < y; i++) {
+            result *= x;
+        }
+        std::cout << x << '^' << y << '=' << result << "\n";
+        return 0;
+    }
+
+    else {
+        std::cout << "Wrong operator" << "\n";
         return 0;
     }
 }
