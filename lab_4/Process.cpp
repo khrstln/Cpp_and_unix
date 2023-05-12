@@ -14,8 +14,8 @@ float formula_2(const float& x){
 }
 
 int main() {
-    float x = 1.337;
-    int n = 10000;
+    float x = 0.1415;
+    int n = 100000;
     float buf[n];
 
     clock_t start = clock();
@@ -80,7 +80,8 @@ int main() {
 
     clock_t end = clock();
     double seconds = (double)(end - start) / CLOCKS_PER_SEC;
-   printf("For N = %i the elapsed time is %.2e seconds\n", n, seconds);
+    std::cout << "Time of " << n << " loops is " << seconds << " seconds" << "\n";
+    // printf("For N = %i the elapsed time is %.2e seconds\n", n, seconds);
 
     return 0;
 }
