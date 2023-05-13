@@ -240,3 +240,24 @@ int main() {
     return 0;
 }
 ```
+
+## Время выполнения расчетов ##
+
+1. Последовательные вычисления
+
+Time of 10000 loops: 0.001234 seconds
+
+Time of 100000 loops: 0.013011 seconds
+
+2. Параллельные вычисления с помощью потоков
+
+Time of 10000 loops: 0.009952 seconds
+
+Time of 100000 loops: 0.146479 seconds
+
+3. Параллельные вычисления с помощью процессов
+
+Time of 10000 loops is 0.000389 seconds
+
+Time of 100000 loops is 0.001281 seconds
+
