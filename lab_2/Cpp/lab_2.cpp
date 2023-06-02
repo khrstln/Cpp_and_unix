@@ -5,7 +5,7 @@
 
 using namespace std;
 
-double func(const int &x, const int &n) {
+double func(int x, int n) {
     clock_t start = clock();
     for(int i = 0; i < n; ++i)
     {
